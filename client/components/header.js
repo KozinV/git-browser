@@ -5,7 +5,7 @@ const Header = () => {
   const { repositoryName } = useParams()
   const { userName } = useParams()
   return (
-    <div className="flex bg-indigo-800 text-white">
+    <nav className="flex bg-indigo-800 text-white">
       <div className="p-2 m-2" id="repository-name">
         {repositoryName}
       </div>
@@ -14,12 +14,14 @@ const Header = () => {
           Go back!
         </Link>
       </div>
-      <div className="p-2 m-2 border-2 rounded-md">
-        <Link id="go-repository-list" to={`/${userName}`}>
-          Go to List!
-        </Link>
-      </div>
-    </div>
+      {repositoryName && (
+        <div className="p-2 m-2 border-2 rounded-md">
+          <Link id="go-repository-list" to={`/${userName}`}>
+            Go to List!
+          </Link>
+        </div>
+      )}
+    </nav>
   )
 }
 

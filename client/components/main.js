@@ -20,6 +20,11 @@ const Home = () => {
               onChange={onChange}
               placeholder="input name"
               className="focus:placeholder-gray-100"
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  history.push(`/${value}`)
+                }
+              }}
             />
             <button
               id="search-button"
